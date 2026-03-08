@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Privacidad | Dr. Ramón Zeledón Quirós</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <style>
+        .privacy-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--space-xl) var(--space-md);
+            background-color: var(--bg-primary);
+            border-radius: 4px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        body.dark-mode .privacy-container {
+            background-color: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .privacy-header {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+        }
+
+        .privacy-header h1 {
+            font-size: 2.5rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .privacy-content h2 {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+
+        .privacy-content p {
+            margin-bottom: 1.25rem;
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .privacy-notice {
+            background-color: rgba(139, 46, 46, 0.05);
+            border-left: 4px solid var(--accent);
+            padding: var(--space-md);
+            margin-top: var(--space-md);
+        }
+    </style>
+</head>
+
+<body class="section-bg">
+
+    <!-- AVANT-GARDE NAVIGATION -->
+    <nav class="nav-pill" id="navbar">
+        <div class="nav-pill-inner">
+            <a href="index.html" class="logo-text" data-i18n="nav_logo">Dr. Ramón</a>
+
+            <div class="nav-links-brutalist" id="nav-menu">
+                <a href="index.html" data-i18n="nav_home">Inicio</a>
+                <a href="index.html#quien-soy" data-i18n="nav_about">Quién soy</a>
+                <a href="index.html#experiencia" data-i18n="nav_exp">Experiencia</a>
+                <a href="instituciones.html" data-i18n="nav_institutions">Instituciones</a>
+                <a href="index.html#contacto" data-i18n="nav_contact">Contacto</a>
+            </div>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="lang-toggle" class="btn-text">
+                    <span class="lang-text">ES</span>
+                </button>
+                <button class="menu-toggle-brutalist" id="menu-toggle" aria-label="Menú móvil">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FLOATING ICONS -->
+    <div class="floating-actions">
+        <a href="https://wa.me/something" class="float-btn float-wa" target="_blank" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+123456789" class="float-btn float-tel" aria-label="Teléfono directo">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+    </div>
+
+    <section class="section" style="padding-top: calc(var(--header-height) + var(--space-xl)); min-height: 80vh;">
+        <div class="container fade-up">
+            <div class="privacy-container">
+                <div class="privacy-header">
+                    <h1 data-i18n="priv_title">Política de Privacidad</h1>
+                </div>
+
+                <div class="privacy-content">
+                    <div class="privacy-notice">
+                        <h2 data-i18n="priv_notice" style="margin-top: 0;">Aviso Importante sobre Inteligencia
+                            Artificial</h2>
+                        <p data-i18n="priv_text1">Las imágenes y fotografías utilizadas en esta página web para ilustrar
+                            diversos escenarios (incluyendo, pero no limitándose a personal, pacientes, e instalaciones
+                            generales) han sido generadas o complementadas utilizando inteligencia artificial.</p>
+                        <p data-i18n="priv_text2">Estas imágenes son meramente representativas y estéticas, utilizadas
+                            con fines ilustrativos. No buscan suplantar la identidad de nadie, y cualquier parentesco
+                            visual, parecido o coincidencia con personas reales (ya sean vivas o fallecidas) o lugares
+                            reales es puramente accidental y coincidencia.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    style="vertical-align: middle; margin-right: 8px;">
+                    <path d="M12 2C8 2 4 5.5 4 10C4 14.5 12 22 12 22C12 22 20 14.5 20 10C20 5.5 16 2 12 2Z"
+                        fill="var(--accent)" />
+                </svg>
+                Dr. Ramón Zeledón Quirós
+            </div>
+            <div class="footer-links">
+                <a href="index.html" data-i18n="nav_home">Inicio</a>
+                <a href="instituciones.html" data-i18n="nav_institutions">Instituciones</a>
+                <a href="privacidad.html" data-i18n="nav_privacy">Privacidad</a>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="year"></span> Dr. Ramón Zeledón <span data-i18n="footer_rights">Todos los
+                    derechos reservados.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- TAWK.TO SCRIPT -->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/69633d7c987b03197cb20051/1jelqgcbd';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+
+    <!-- NEXTWEB BADGE -->
+    <div class="nextweb-badge">
+        <div class="badge-logo-container">
+            <img src="img/logo.png" alt="NextWeb CR Logo">
+        </div>
+        <div class="badge-text">Desarrollado por <strong>NextWeb CR</strong></div>
+    </div>
+
+    <!-- LOCAL SCRIPTS -->
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>

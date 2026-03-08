@@ -1,0 +1,174 @@
+/* =========================================
+   VARIABLES & DESIGN SYSTEM
+   ========================================= */
+:root {
+  /* Colors - Light Mode */
+  --bg-primary: #fdfdfc;          /* Off-white, slightly warm */
+  --bg-secondary: #f4f1ea;        /* Elegant paper texture beige */
+  --text-primary: #2c2929;        /* Soft black for readability */
+  --text-secondary: #5e5a5a;
+  --accent: #8b2e2e;              /* Elegant subtle red */
+  --accent-hover: #a13d3d;
+  --white: #ffffff;
+  
+  /* Typography */
+  --font-serif: 'Lora', 'Playfair Display', serif;
+  --font-sans: 'Inter', '-apple-system', sans-serif;
+  
+  /* Spacing (Rem-based) */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 6rem;
+  
+  /* Layout constraints */
+  --max-width: 1200px;
+  --header-height: 80px;
+
+  /* Textures */
+  --texture-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* Colors - Dark Mode */
+body.dark-mode {
+  --bg-primary: #151617;          /* Rich charcoal */
+  --bg-secondary: #1a1c1d;
+  --text-primary: #eae5e0;
+  --text-secondary: #a3a09e;
+  --accent: #a33838;              /* Slightly brighter red for contrast */
+  --accent-hover: #b84545;
+  --texture-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* =========================================
+   RESET & BASE STYLES
+   ========================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px; /* Base 16px */
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Global Texture Overlay */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  pointer-events: none;
+  background-image: var(--texture-noise);
+  z-index: 9999;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: var(--space-sm);
+}
+
+p {
+  margin-bottom: var(--space-sm);
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+}
+
+/* Typography Utility */
+.text-accent {
+  color: var(--accent);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  background-color: var(--accent);
+  color: var(--white);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.875rem;
+  border: 1px solid var(--accent);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: var(--white);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--accent);
+}
+
+.btn-outline:hover {
+  background-color: var(--accent);
+  color: var(--white);
+}
+
+/* =========================================
+   ANIMATIONS & UTILITIES
+   ========================================= */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   MEDIA QUERIES - GLOBAL
+   ========================================= */
+/* Tablet */
+@media (min-width: 768px) {
+  html { font-size: 17px; }
+  .container { padding: 0 var(--space-md); }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  html { font-size: 18px; }
+}

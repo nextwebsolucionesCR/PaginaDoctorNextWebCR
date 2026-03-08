@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Instituciones | Dr. Ramón Zeledón Quirós</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+
+    <style>
+        /* Specific styles for institutions */
+        .page-header {
+            padding: calc(var(--header-height) + var(--space-xl)) 0 var(--space-md);
+            text-align: center;
+            background-color: var(--bg-primary);
+        }
+
+        .hospital-card {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+            margin-bottom: var(--space-xl);
+            background-color: var(--bg-primary);
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+
+        body.dark-mode .hospital-card {
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            background-color: var(--bg-secondary);
+        }
+
+        .hospital-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .hospital-content {
+            padding: var(--space-lg);
+        }
+
+        .hospital-title {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .hospital-address {
+            font-family: var(--font-sans);
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .map-container {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .map-box {
+            width: 100%;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .map-box iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+        }
+
+        .map-label {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        @media (min-width: 768px) {
+            .map-container {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hospital-card {
+                flex-direction: row;
+            }
+
+            .hospital-img {
+                width: 40%;
+                height: auto;
+            }
+
+            .hospital-content {
+                width: 60%;
+            }
+
+            .hospital-card:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- AVANT-GARDE NAVIGATION -->
+    <nav class="nav-pill" id="navbar">
+        <div class="nav-pill-inner">
+            <a href="index.html" class="logo-text" data-i18n="nav_logo">Dr. Ramón</a>
+
+            <div class="nav-links-brutalist" id="nav-menu">
+                <a href="index.html" data-i18n="nav_home">Inicio</a>
+                <a href="index.html#quien-soy" data-i18n="nav_about">Quién soy</a>
+                <a href="index.html#experiencia" data-i18n="nav_exp">Experiencia</a>
+                <a href="instituciones.html" data-i18n="nav_institutions">Instituciones</a>
+                <a href="index.html#contacto" data-i18n="nav_contact">Contacto</a>
+            </div>
+
+            <div class="nav-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Cambiar tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="lang-toggle" class="btn-text">
+                    <span class="lang-text">ES</span>
+                </button>
+                <button class="menu-toggle-brutalist" id="menu-toggle" aria-label="Menú móvil">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- FLOATING ICONS -->
+    <div class="floating-actions">
+        <a href="https://wa.me/something" class="float-btn float-wa" target="_blank" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="tel:+123456789" class="float-btn float-tel" aria-label="Teléfono directo">
+            <i class="fas fa-phone-alt"></i>
+        </a>
+    </div>
+
+    <div class="page-header section-bg fade-up">
+        <div class="container">
+            <h1 class="section-title" data-i18n="inst_title" style="margin-bottom: 1rem;">Instituciones En Las Que He
+                Trabajado</h1>
+            <p style="font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;"
+                data-i18n="inst_sub">Brindando atención médica especializada en los principales centros médicos del
+                país.</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+
+            <!-- HOSPITAL ER -->
+            <div class="hospital-card fade-up">
+                <img src="img/hospitales/hospitalER.jpg" alt="Hospital ER" class="hospital-img">
+                <div class="hospital-content">
+                    <h2 class="hospital-title">Hospital ER</h2>
+                    <p class="hospital-address"><i class="fas fa-map-marker-alt" style="color:var(--accent)"></i> <span
+                            data-i18n="dir_label">Dirección:</span> 200m este banco central</p>
+                    <div class="map-container">
+                        <div class="map-box">
+                            <div class="map-label" data-i18n="btn_maps">Google Maps</div>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60617.60704605025!2d-85.51711382490151!3d10.629533388934833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f757d2a8a1c08e5%3A0xb2f8a494fb368393!2sProvincia%20de%20Guanacaste%2C%20Liberia!5e1!3m2!1ses-419!2scr!4v1769628204690!5m2!1ses-419!2scr"
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="map-box">
+                            <div class="map-label" data-i18n="btn_waze">Waze</div>
+                            <iframe src="https://embed.waze.com/iframe?zoom=16&lat=10.636270&lon=-85.430546&ct=livemap"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HOSPITAL LI -->
+            <div class="hospital-card fade-up">
+                <img src="img/hospitales/hospitalLI.jpg" alt="Hospital LI" class="hospital-img">
+                <div class="hospital-content">
+                    <h2 class="hospital-title">Hospital LI</h2>
+                    <p class="hospital-address"><i class="fas fa-map-marker-alt" style="color:var(--accent)"></i> <span
+                            data-i18n="dir_label">Dirección:</span> 400 metros norte de restaurante food</p>
+                    <div class="map-container">
+                        <div class="map-box">
+                            <div class="map-label" data-i18n="btn_maps">Google Maps</div>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60766.0012329061!2d-83.96638927949621!3d9.854204852301624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0df1021af2921%3A0xb5e5548558a39c52!2sProvincia%20de%20Cartago%2C%20Cartago!5e1!3m2!1ses-419!2scr!4v1769628282027!5m2!1ses-419!2scr"
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="map-box">
+                            <div class="map-label" data-i18n="btn_waze">Waze</div>
+                            <iframe src="https://embed.waze.com/iframe?zoom=13&lat=9.864166&lon=-83.921642&ct=livemap"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HOSPITAL LO -->
+            <div class="hospital-card fade-up">
+                <img src="img/hospitales/hospitalLO.jpg" alt="Hospital LO" class="hospital-img">
+                <div class="hospital-content">
+                    <h2 class="hospital-title">Hospital LO</h2>
+                    <p class="hospital-address"><i class="fas fa-map-marker-alt" style="color:var(--accent)"></i> <span
+                            data-i18n="dir_label">Dirección:</span> 100 metros este de mcdonalds</p>
+                    <div class="map-container">
+                        <div class="map-box">
+                            <div class="map-label" data-i18n="btn_maps">Google Maps</div>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30371.47531201622!2d-84.84282060196878!3d9.978550118033002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa02eb96dada6b7%3A0x3f48bd110f83d5ec!2sProvincia%20de%20Puntarenas%2C%20Puntarenas!5e1!3m2!1ses-419!2scr!4v1769628403476!5m2!1ses-419!2scr"
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="map-box">
+                            <div class="map-label" data-i18n="btn_waze">Waze</div>
+                            <iframe src="https://embed.waze.com/iframe?zoom=14&lat=9.979155&lon=-84.829731&ct=livemap"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HOSPITAL ES -->
+            <div class="hospital-card fade-up">
+                <img src="img/hospitales/hospitalES.jpg" alt="Hospital ES" class="hospital-img">
+                <div class="hospital-content">
+                    <h2 class="hospital-title">Hospital ES</h2>
+                    <p class="hospital-address"><i class="fas fa-map-marker-alt" style="color:var(--accent)"></i> <span
+                            data-i18n="dir_label">Dirección:</span> 50 metros sur de tacobell</p>
+                    <div class="map-container">
+                        <div class="map-box">
+                            <div class="map-label" data-i18n="btn_maps">Google Maps</div>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15170.466267769609!2d-85.84836965417702!3d10.3008884371251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f9e39409203c30f%3A0xbb189f5e2cc1f893!2sProvincia%20de%20Guanacaste%2C%20Tamarindo!5e1!3m2!1ses-419!2scr!4v1769628482557!5m2!1ses-419!2scr"
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <div class="map-box">
+                            <div class="map-label" data-i18n="btn_waze">Waze</div>
+                            <iframe src="https://embed.waze.com/iframe?zoom=15&lat=10.297856&lon=-85.841417&ct=livemap"
+                                allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    style="vertical-align: middle; margin-right: 8px;">
+                    <path d="M12 2C8 2 4 5.5 4 10C4 14.5 12 22 12 22C12 22 20 14.5 20 10C20 5.5 16 2 12 2Z"
+                        fill="var(--accent)" />
+                </svg>
+                Dr. Ramón Zeledón Quirós
+            </div>
+            <div class="footer-links">
+                <a href="index.html" data-i18n="nav_home">Inicio</a>
+                <a href="instituciones.html" data-i18n="nav_institutions">Instituciones</a>
+                <a href="privacidad.html" data-i18n="nav_privacy">Privacidad</a>
+            </div>
+            <div class="footer-bottom">
+                &copy; <span id="year"></span> Dr. Ramón Zeledón <span data-i18n="footer_rights">Todos los
+                    derechos reservados.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- TAWK.TO SCRIPT -->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/69633d7c987b03197cb20051/1jelqgcbd';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+
+    <!-- NEXTWEB BADGE -->
+    <div class="nextweb-badge">
+        <div class="badge-logo-container">
+            <img src="img/logo.png" alt="NextWeb CR Logo">
+        </div>
+        <div class="badge-text">Desarrollado por <strong>NextWeb CR</strong></div>
+    </div>
+
+    <!-- LOCAL SCRIPTS -->
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>
